@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Add Parking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            
+        }
+        h5 {
+            color: #007bff;
+            text-align: center;
+        }
+        form {
+            background-color:rgba(186, 186, 186, 0.5);
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 13px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: inline-block;
+            color: #007BFF;
+            text-decoration: none;
+            
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .center-link {
+           display: flex;
+           justify-content: center;
+           margin-top: 20px;
+        }
+        body {
+           background-image: url('static/images/bg.jpg');
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-size: cover;
+       }
+        .navbar {
+           margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <img src="{{ url_for('static', filename='images/logo.jpg' ) }}" alt="" width="30" height="27" >
+              PARKIT - Parking Management
+          </a>
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+              <a class="nav-link" href="{{url_for('parking')}}">Parking</a>
+              <a class="nav-link" href="#">Log In</a>
+              <a class="nav-link" href="#">Sign Up</a>
+            </div>
+          </div>
+        </nav>
+    </header>
+    
+    <h5>Add New Parking Record</h5>
+    <form method="POST">
+        <label for="spot_name">Spot Name:</label><br>
+        <input type="text" id="spot_name" name="spot_name" required><br><br>
+        <label for="vehicle_name">Vehicle Name:</label><br>
+        <input type="text" id="vehicle_name" name="vehicle_name" required><br><br>
+        <label for="reg_no">Reg No:</label><br>
+        <input type="text" id="reg_no" name="reg_no" required><br><br>
+        <label for="owner_name">Owner Name:</label><br>
+        <input type="text" id="owner_name" name="owner_name" required><br><br>
+        <button type="submit">Add Parking</button>
+    </form>
+    <br>
+    <div class="center-link">
+        <a href="{{ url_for('parking') }}">Back</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
